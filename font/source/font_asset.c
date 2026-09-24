@@ -60,7 +60,7 @@ font_asset_serialize(
     binary_stream_write(
       stream,
       font->glyphs,
-      sizeof(glyph_data_t) * FONT_GLYPH_COUNT);
+      sizeof(font_glyph_data_t) * FONT_GLYPH_COUNT);
     binary_stream_write(
       stream,
       font->bounds,
@@ -78,7 +78,7 @@ font_asset_deserialize(
 
   {
     size_t s_32 = sizeof(uint32_t);
-    size_t s_gd = sizeof(glyph_data_t) * FONT_GLYPH_COUNT;
+    size_t s_gd = sizeof(font_glyph_data_t) * FONT_GLYPH_COUNT;
     size_t s_gb = sizeof(glyph_bounds_t) * FONT_GLYPH_COUNT;
     font_asset_t *font = (font_asset_t *)dst;
     asset_ref_deserialize(&font->texture_ref, allocator, stream);

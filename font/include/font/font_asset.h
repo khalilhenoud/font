@@ -56,11 +56,11 @@ typedef struct binary_stream_t binary_stream_t;
 typedef float glyph_bounds_t[6];
 
 typedef
-struct glyph_data_t {
+struct font_glyph_data_t {
   uint32_t x, y;
   uint32_t width;
   uint32_t width_offset;
-} glyph_data_t;
+} font_glyph_data_t;
 
 typedef
 struct font_asset_t {
@@ -70,7 +70,7 @@ struct font_asset_t {
   uint32_t font_width, font_height;
   uint32_t start_char;
 
-  glyph_data_t glyphs[FONT_GLYPH_COUNT];
+  font_glyph_data_t glyphs[FONT_GLYPH_COUNT];
   glyph_bounds_t bounds[FONT_GLYPH_COUNT];
 } font_asset_t;
 
